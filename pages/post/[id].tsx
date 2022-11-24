@@ -13,54 +13,50 @@ export default function Admin({post, dataJson}: any) {
             </div>
 
             <div className="more-post">
-                <h2 style={{textAlign: 'center'}}>Leggi altri post:</h2>
+                <h2 style={{textAlign: "center"}}>Leggi altri post:</h2>
                 <div className="more-post-cont">
                     {dataJson.filter(function (d: any) {
-                        return d.id != post[0].id;
-                    }).map((item: any) => (
-
-                        <div key={item.id} className="more-card">
-                            <h4>{item.title}</h4>
-                            <p>{item.preview}</p>
-                            <Link className={'continue-button'} href={`/post/${item.permalink}`}>Continua a leggere...</Link>
-                            <i style={{fontSize: '16px', float: 'right'}}>Autore: {item.author}</i>
-                        </div>
-                    ))}
+                            return d.id != post[0].id;
+                        }).map((item: any) => (
+                            <div key={item.id} className="more-card">
+                                <h4>{item.title}</h4>
+                                <p>{item.preview}</p>
+                                <Link className={"continue-button"} href={`/post/${item.permalink}`}>
+                                    Continua a leggere...
+                                </Link>
+                                <i style={{fontSize: "16px", float: "right"}}>
+                                    Autore: {item.author}
+                                </i>
+                            </div>
+                        ))}
                 </div>
             </div>
         </Layout>
-    )
+    );
 }
 
 export async function getStaticProps(context: any) {
-
-    const res = await fetch('https://www.jsonkeeper.com/b/D2MV');
+    const res = await fetch("https://www.jsonkeeper.com/b/D2MV");
     const dataJson = await res.json();
-    const post = dataJson.filter((p: any) => p.permalink == context.params.id)
+    const post = dataJson.filter((p: any) => p.permalink == context.params.id);
 
     return {
         props: {
             post,
-            dataJson
-        }
-    }
+            dataJson,
+        },
+    };
 }
 
 export async function getStaticPaths(context: any) {
-    const res = await fetch('https://www.jsonkeeper.com/b/D2MV');
+    const res = await fetch("https://www.jsonkeeper.com/b/D2MV");
     const dataJson = await res.json();
     const paths = dataJson.map((post: any) => ({
-        params: {id: post.permalink}
-    }))
+        params: {id: post.permalink},
+    }));
 
     return {
         paths,
-        fallback: false
-    }
+        fallback: false,
+    };
 }
-
-
-
-
-
-
