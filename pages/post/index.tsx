@@ -13,7 +13,7 @@ export async function getStaticProps() {
 }
 
 export default function Account({post}:any) {
-    console.log(post)
+
     return (
         <Layout>
             <div className="post">
