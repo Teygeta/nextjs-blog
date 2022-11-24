@@ -1,0 +1,129 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: #252525;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: chocolate;
+  transition: .2s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.nav {
+  background-color: #f3f3f3;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  font-weight: bold;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.nav-element > span {
+  margin: 0 3rem;
+}
+
+.nav-element > span:hover, .nav > span:hover {
+  color: chocolate;
+  transition: color .2s ease;
+}
+
+.footer {
+  background-color: #f3f3f3;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  border-top: 1px solid #dcdcdc;
+}
+
+.home {
+  background: rgb(237,237,237);
+  background: radial-gradient(circle, rgba(237,237,237,1) 0%, rgba(255,255,255,1) 100%);
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 4rem;
+  line-height: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 11px 3px rgba(0, 0, 0, 0.1);
+
+}
+
+.post > h1{
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.post-home-card {
+  background-color: #f6f6f6;
+  text-align: left;
+  font-size: 18px;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  line-height: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 11px 3px rgba(0, 0, 0, 0.1);
+}
+
+.continue-button {
+  text-decoration: underline;
+}
+
+.post-card {
+  background-color: #f3f3f3;
+  text-align: left;
+  font-size: 18px;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 3rem 4rem 4rem;
+  line-height: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 11px 3px rgba(0, 0, 0, 0.1);
+}
+
+.post-card > h1 {
+  margin-bottom: 3rem;
+}
+
+
+.more-post {
+  padding: 1rem;
+  background-color: #c7c7c7;
+  margin: 10rem 1rem 3rem ;
+  border-radius: 5px;
+}
+
+.more-post-cont {
+  display: flex;
+  justify-content: space-around;
+}
+
+.more-card {
+  max-width: 500px;
+  margin: 1rem;
+  background-color: #f3f3f3;
+  border-radius: .3rem;
+  padding: .5rem 1.5rem 1.5rem;
+}
+
+.about {
+  max-width: 600px;
+  margin-left: 10%;
+}
